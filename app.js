@@ -15,7 +15,7 @@ function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}, increible eres muy HERMOSA E INTELIGENTE 😍❤️ TE AMO MI AMOR!!!`);
+        asignarTextoElemento('p',`Eres HERMOSISIMA E INTELIGENTE 😍😍😍😍! Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         //El usuario no acertó.
@@ -41,7 +41,7 @@ function generarNumeroSecreto() {
     console.log(listaNumerosSorteados);
     //Si ya sorteamos todos los números
     if (listaNumerosSorteados.length == numeroMaximo) {
-        asignarTextoElemento('p','Ya se sortearon todos los números posibles, Igualmente Ganas porque eres demasiado HERMOSA 😍❤️!!!');
+        asignarTextoElemento('p','Ya se sortearon todos los números posibles, igualmente ganas porque eres HERMOSISIMA 😍😍😍!!!');
     } else {
         //Si el numero generado está incluido en la lista 
         if (listaNumerosSorteados.includes(numeroGenerado)) {
@@ -73,3 +73,4 @@ function reiniciarJuego() {
     
 }
 
+condicionesIniciales();
