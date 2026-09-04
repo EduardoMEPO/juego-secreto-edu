@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Juego Secreto Game</title>
 </head>
 <body>
@@ -14,13 +15,13 @@
                     <h1></h1>
                     <p class="texto__parrafo"></p>
                 </div>
-                <input class="container__input">
+                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
                 <div class="chute container__botones">
-                    <button class="container__boton"></button>
-                    <button class="container__boton"></button>
+                    <button class="container__boton">Intentar</button>
+                    <button class="container__boton">Nuevo Juego</button>
                 </div>
             </div>
-            <img class="container__imagen-persona">
+            <img src="./img/ia.png" alt="Una persona mirando a la izquierda" class="container__imagen-persona">
         </div>
     </div>
 
