@@ -11,6 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem; /* Margen de seguridad alrededor en pantallas pequeñas */
 }
 
 
@@ -27,7 +28,9 @@ body::before {
 }
 
 .container {
-    width: 1200px;
+    width: 100%;          /* Ocupa el ancho disponible en celulares */
+    max-width: 1200px;    /* En pantallas grandes no supera los 1200px */
+    min-height: 600px;    /* Permite que crezca hacia abajo si el contenido se apila */
     height: 600px;
     display: flex;
     align-items: center;
@@ -37,20 +40,14 @@ body::before {
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
-    position: relative;
+    position: absolute;
 }
-
 
 .container__contenido {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 0;
-}
-
-.container__informaciones {
-    flex: 1;
-    padding: 3rem;
 }
 
 .container__boton {
@@ -63,6 +60,21 @@ body::before {
     border: none;
     margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+    .container__contenido {
+        flex-direction: column-reverse; /* Pone el texto arriba y la imagen abajo */
+    }
+    .container__botones {
+        flex-direction: column; /* Pone un botón sobre otro */
+    }
+}
+
+.container__informaciones {
+    flex: 1;
+    padding: 3rem;
+}
+
 
 .container__boton:disabled {
     background: #898989;
@@ -94,18 +106,24 @@ body::before {
     gap: 2em;
 }
 
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
-}
 
 p,
 button {
     font-family: 'Inter', sans-serif;
 }
 
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
+}
+
 .texto__parrafo {
     font-size: 32px;
     font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    .texto__parrafo { font-size: 18px; }
 }
